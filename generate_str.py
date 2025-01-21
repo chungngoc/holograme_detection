@@ -95,6 +95,8 @@ if __name__ == '__main__':
     str_folder_name = "str_images_symmetric"
     fraud_folder = ["fraud/copy_without_holo", "fraud/photo_holo_copy", "fraud/pseudo_holo_copy"]
     type_folder = "origins"    # Create STR from origins videos
+    # We can create STR from fraud videos by changing type_folder = "fraud/copy_without_holo" for example
+
     with_holo = True # Change to create STR in zone hologram or without hologram
 
     hologram_mask_path = os.path.join(root_folder, 'templates/hologram_masks/passport_hologram_mask_small.png')
@@ -114,6 +116,7 @@ if __name__ == '__main__':
         os.makedirs(save_folder, exist_ok=True)
 
         json_name = f"coordinates_{type_folder}.json" # Need to define
+        json_name = json_name.replace('/', '_') # In case type_folder = "fraud/copy_without_holo" for example.
         json_path = os.path.join(root_folder, str_folder_name, type, json_name)
 
         for folder in os.listdir(path_folders):
