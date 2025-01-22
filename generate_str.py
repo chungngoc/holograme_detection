@@ -1,4 +1,4 @@
-from utils import create_random_path, create_symmetric_stack, stack_STR, save_random_paths
+from utils.utils import create_random_path, create_symmetric_stack, stack_STR, save_random_paths
 import os
 import cv2
 import numpy as np
