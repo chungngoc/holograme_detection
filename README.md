@@ -28,3 +28,10 @@ The dataset has:
 - 150 videos of "origin" documents (with hologram).
 
 - 150 videos of "fraud" documents. (50 copies of a document without hologram, 50 copies of a document with drawn in an image editor hologram pattern, and 50 printed photos of “original” document).
+
+
+## Bibliographie
+
+LI Koliaskina et al. “MIDV-Holo : A Dataset for ID Document Hologram Detection in a Video Stream”. In : International Conference on Document Analysis and Recognition. Springer. 2023, p. 486-503. doi : https://doi.org/10.1007/978-3-031-41682-8_30.
+
+Harshal Chaudhari, Rishikesh Kulkarni et M.K. Bhuyan. “Weakly Supervised Learning based Reconstruction of Planktons in Digital In-line Holography”. In : Digital Holography and 3-D Imaging 2022. Optica Publishing Group, 2022, W5A.6. doi : 10.1364/DH.2022.W5A.6. url : https://opg.optica.org/abstract.cfm?URI=DH-2022-W5A.6.
