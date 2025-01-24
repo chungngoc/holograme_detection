@@ -66,7 +66,7 @@ if __name__ == '__main__':
     dim = hologram_mask.shape[::-1]
 
     # Define the type of folders
-    type_folders = ['fraud/copy_without_holo', 'fraud/photo_holo_copy', 'fraud/pseudo_holo_copy'] 
+    type_folders = ['origins', 'fraud/copy_without_holo', 'fraud/photo_holo_copy', 'fraud/pseudo_holo_copy']
     
     ##############################################################################
     for type_folder in type_folders:

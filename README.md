@@ -71,6 +71,25 @@ I used pre-trained model and fine-tune with the STR dataset. The model was train
   <img src="images/classification.png" alt="Pred" width="500"/>
 </p>
 
+The trained model is saved in the *best_model* folder.
+
+### Step 5 : Evaluate a video
+
+After having the trained model, for each video of the test set, we will generate 1000 STRs randomly with the script *generate_str_evaluate.py* in the *evaluate* folder. Then, pass these STRs to the model for prediction and count the number of "origin" predictions via script *evaluate.py*, this script also saves the result of predictions in a file text.
+
+The script *evaluate_and_visualize.py* will evaluate 1000 STRs and plot all predictions in the mask image. The "origin" predictions are plotted in blue, and the "fraud" predictions are in red.
+
+<p align="center">
+  <img src="visualization/evaluate_copy_without_holo/psp09_04_01_predictions.jpg" alt="Example of predictions in video psp09_04_01 of folder copy_without_holo" title="Example of predictions in video psp09_04_01 of folder copy_without_holo" width="500">
+  <p align="center"> <i>Example of predictions of 1000 STRs</i></p>
+</p>
+
+After having the file text of 1000 predictions of all videos of the test set, we can use script *plot_distribution.py* to visualize the distribution of predictions.
+
+### Step 6 : Refine datasets
+
+Because we generate STRs automatically (choose a random pixel in the zone of hologram for STR "origin" and out of the zone of hologram for STR "fraud" in a mask image), there are many STRs with small fluctuations (lack of present of hologram) labeled to "origin", which makes the model confused between 2 classes. So, to enhance the robustness of the model, we will refine the dataset by using the model to predict the train and validation dataset of class "origin" and remove samples with small fluctuation (predicted as "fraud"). The script *bootstrap_learning.py* helps to do this task.
+
 ## Bibliography
 
 LI Koliaskina et al. “MIDV-Holo : A Dataset for ID Document Hologram Detection in a Video Stream”. In : International Conference on Document Analysis and Recognition. Springer. 2023, p. 486-503. doi : https://doi.org/10.1007/978-3-031-41682-8_30.
